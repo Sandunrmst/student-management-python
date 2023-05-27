@@ -1,3 +1,4 @@
+# RMST CODING
 
 class Students:
 
@@ -70,9 +71,8 @@ def find_student_lowest_science_marks(term):
             student_lowest_science_marks = student
     return student_lowest_science_marks
 
+
 # Main body of the funtion
-
-
 def run_system():
     while True:
         print("Please Enter Number You need to proceed\n")
@@ -84,9 +84,10 @@ def run_system():
         user_input = int(input("Enter your Choice: "))
 
         if user_input == 1:
+            # Get user Input for store student details
             while True:
-                print("Stop adding Student enter '#'")
-                print("For continue adding student enter '$'\n")
+                print("Stop adding students for Enter -> # ")
+                print("For continue adding student for Enter -> $ \n")
                 end = input("Enter your choice: \n")
                 if end == '$':
                     name = input("Enter Student Name: ")
@@ -109,7 +110,7 @@ def run_system():
                     print("Adding completed")
                     break
                 else:
-                    print("Please input valid symbol -> '#' '$' ")
+                    print("Please input valid symbol -> '#' or '$' ")
 
         elif user_input == 2:
 
@@ -133,7 +134,7 @@ def run_system():
                 f"Maximum Average Marks: {student_info.average_marks(number)}")
 
         elif user_input == 4:
-            number = input("Enter term number 1 to 3: ")
+            number = input("Enter Term Number 1 to 3: ")
             number = f"Term {number}"
 
             lowest_science_marks = find_student_lowest_science_marks(number)
@@ -143,13 +144,13 @@ def run_system():
             print(f"Grade: {student_info.student_details('name')}")
 
             marks = student_info.student_details('marks')
-            print(f"Science Mark:{marks[number]['Science']} ")
+            print(f"Science Marks:{marks[number]['Science']} ")
 
         elif user_input == 5:
             print("Thank you for working with our Student Management System")
             exit()
         else:
-            print("Please enter valid input 1 to 5")
+            print("Please Enter Valid Input 1 to 5")
 
 
 # Call the main funtion to run this system
