@@ -1,2 +1,2 @@
-# student_management_python
+# Python_student_management_System
 Student management system with python OOP 
