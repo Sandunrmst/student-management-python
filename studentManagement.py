@@ -81,6 +81,7 @@ def run_system():
         print("3. Display who has the Maximum Average Marks for Given Term")
         print("4. Display who has the lowest science Mark for Given Term")
         print("5. For Exit\n")
+
         user_input = int(input("Enter your Choice: "))
 
         if user_input == 1:
@@ -91,14 +92,30 @@ def run_system():
                 end = input("Enter your choice: \n")
                 if end == '$':
                     name = input("Enter Student Name: ")
-                    grade = int(input("Enter Student Grade: "))
+                    grade = input("Enter Student Grade: ")
                     cls = input("Enter Student Class Room: ")
                     student_marks = {}
                     for i in range(1, 4):
                         print(f"Enter Term {i} Marks: ")
-                        maths_marks = int(input("Enter Maths Marks: "))
-                        science_marks = int(input("Enter Science Marks: "))
-                        art_marks = int(input("Enter Art Marks: "))
+                        while True:
+                            try:
+                                maths_marks = int(input("Enter Maths Marks: "))
+                                break
+                            except:
+                                print("Please Entre correct marks between 1 to 100")
+                        while True:
+                            try:
+                                science_marks = int(
+                                    input("Enter Science Marks: "))
+                                break
+                            except:
+                                print("Please Entre correct marks between 1 to 100")
+                        while True:
+                            try:
+                                art_marks = int(input("Enter Art Marks: "))
+                                break
+                            except:
+                                print("Please Entre correct marks between 1 to 100")
 
                         student_marks[f"Term {i}"] = {
                             'Maths': maths_marks,
@@ -106,6 +123,7 @@ def run_system():
                             'Art': art_marks,
                         }
                     students.append(Students(name, grade, cls, student_marks))
+
                 elif end == '#':
                     print("Adding completed")
                     break
