@@ -128,10 +128,14 @@ def run_system():
             maximum_average_marks = find_max_average_marks(number)
             student_info = maximum_average_marks
 
-            print(f"Student Name: {student_info.student_details('name')}")
-            print(f"Grade: {student_info.student_details('grade')}")
-            print(
-                f"Maximum Average Marks: {student_info.average_marks(number)}")
+            try:
+                print(
+                    f"Student Name: {student_info.student_details('name')}")
+                print(f"Grade: {student_info.student_details('grade')}")
+                print(
+                    f"Maximum Average Marks: {student_info.average_marks(number)}")
+            except:
+                print("Please enter student details before checking their results\n")
 
         elif user_input == 4:
             number = input("Enter Term Number 1 to 3: ")
@@ -139,12 +143,14 @@ def run_system():
 
             lowest_science_marks = find_student_lowest_science_marks(number)
             student_info = lowest_science_marks
+            try:
+                print(f"Student Name: {student_info.student_details('name')}")
+                print(f"Grade: {student_info.student_details('grade')}")
 
-            print(f"Student Name: {student_info.student_details('name')}")
-            print(f"Grade: {student_info.student_details('name')}")
-
-            marks = student_info.student_details('marks')
-            print(f"Science Marks:{marks[number]['Science']} ")
+                marks = student_info.student_details('marks')
+                print(f"Science Marks:{marks[number]['Science']} ")
+            except:
+                print("Please enter student details before checking their results\n")
 
         elif user_input == 5:
             print("Thank you for working with our Student Management System")
